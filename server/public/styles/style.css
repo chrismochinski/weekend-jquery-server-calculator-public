@@ -24,3 +24,8 @@ header {
 .selectedButton {
     background-color: #c5edd0;
 }
+
+ul {
+    list-style-position: inside;
+    font-size: 25px;
+}
