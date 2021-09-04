@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend jQuery Server Calculator</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./vendors/jquery.js"></script>
+    <script src="./scripts/client.js"></script>
+</head>
+
+<body>
+
+    <header>jQuery Server Calculator</header>
+    <h3>Choose your destiny...</h3>
+
+    <div class="buttonsAndInputs">
+        <input type="number" id="firstNumber" placeholder="Number">
+        <button id="plusButton">+</button>
+        <button id="minusButton">-</button>
+        <button id="timesButton">x</button>
+        <button id="dividedByButton">÷</button>
+        <input type="number" id="secondNumber" placeholder="Number">
+        <button id="equalsButton">=</button>
+        <button id="clearButton">C</button>
+    </div>
+
+    <h1 class="theCalculationOutput"><span id="firstNumberOutput"></span> <span id="operatorOutput"> </span> <span id="secondNumberOutput"> </span></h1>
+
+    <ul id="listOfMathOutput">
+
+    </ul>
+
+</body>
+
+</html>
