@@ -10,7 +10,7 @@ function readyNow() {
     $('#dividedByButton').on('click', dividedByButton);
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
-    // getTheMaths();
+    getTheMaths();
 }
 
 let operator; //assign operator variable to empty string...for now!
