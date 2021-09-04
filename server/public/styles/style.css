@@ -1,11 +1,27 @@
-html, body {
+body {
     text-align: center;
+    background-image: url("background-gif-1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
 }
 
 header {
-    background-color: rgb(161, 154, 157);
+    background-image: url("chalk-header-back.png");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;;
+    margin-top: 40px;
+    padding-top: 200px;
+    padding-bottom: 0px;
     text-align: center;
-    font-size: 30px
+    /* font-size: 3vw; */
+}
+
+.contentBelowHeader {
+    margin-top: 30px;
 }
 
 .buttonsAndInputs {
@@ -13,7 +29,13 @@ header {
 }
 
 .calculationOutput {
-    font-size: 35px;
+    font-size: 30px;
+    
+}
+
+#listOfMathOutput {
+    font-size: 30px;
+    font-family: 'Architects Daughter', cursive;
     
 }
 
@@ -28,4 +50,25 @@ header {
 ul {
     list-style-position: inside;
     font-size: 25px;
+    color: white;
+}
+
+h3 {
+    color: white;
+}
+
+footer {
+    margin-top: 200px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+button.hover{
+
+}
+
+a {
+    color: rgba(177, 147, 221, 0.842);
 }

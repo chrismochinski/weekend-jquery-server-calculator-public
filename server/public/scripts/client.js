@@ -32,8 +32,8 @@ function getTheMaths() {
         $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
         for (const math of listOfMaths) {
             console.log(math);
-            $('#listOfMathOutput').append(`
-                <li>${math.firstNumber} ${math.operator} ${math.secondNumber} = ${math.product}</li>
+            $('#listOfMathOutput').prepend(`
+                <li>${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}</li>
             `)
         }
     });
@@ -42,7 +42,7 @@ function getTheMaths() {
 
 
 function clearAll() {
-    if (operator === '+' || operator === '-' || operator === '*' || operator === '+' || operator === '÷') {
+    if (operator === '+' || operator === '-' || operator === 'x' || operator === '÷') {
         console.log($(this));
         console.log(`Operator was: ${operator}`);
         operator = operator[-1];
@@ -95,16 +95,14 @@ function handlePostSuccess(res) {  //this is the res from the POST
 }
 
 function postError() { //if there's an error with the input/operator/math
-    // alert('Sorry, something broke.')
+    alert('Sorry, something broke.')
 }
 
-
-
 function plusButton() {
-    // console.log($(this));
+    console.log($(this));
     // console.log(`Operator was: ${operator}`)
     operator = '+';
-    // console.log('operator is now:', operator);
+    console.log('operator is now:', operator);
     $('#plusButton').css('background-color', '#c5edd0'); //plus button selected
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#FCFCFC');
@@ -112,10 +110,10 @@ function plusButton() {
 }
 
 function minusButton() {
-    // console.log($(this));
+    console.log($(this));
     // console.log(`Operator was: ${operator}`)
     operator = '-';
-    // console.log('operator is now:', operator);
+    console.log('operator is now:', operator);
     $('#plusButton').css('background-color', '#FCFCFC');
     $('#minusButton').css('background-color', '#c5edd0'); //minus button selected
     $('#timesButton').css('background-color', '#FCFCFC');
@@ -123,10 +121,10 @@ function minusButton() {
 }
 
 function timesButton() {
-    // console.log($(this));
+    console.log($(this));
     // console.log(`Operator was: ${operator}`)
-    operator = '*';
-    // console.log('operator is now:', operator);
+    operator = 'x';
+    console.log('operator is now:', operator);
     $('#plusButton').css('background-color', '#FCFCFC');
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#c5edd0'); //times button selected
@@ -134,10 +132,10 @@ function timesButton() {
 }
 
 function dividedByButton() {
-    // console.log($(this));
+    console.log($(this));
     // console.log(`Operator was: ${operator}`)
     operator = '÷';
-    // console.log('operator is now:', operator);
+    console.log('operator is now:', operator);
     $('#plusButton').css('background-color', '#FCFCFC');
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#FCFCFC'); // divided by button selected
