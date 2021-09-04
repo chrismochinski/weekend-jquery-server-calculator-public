@@ -42,7 +42,7 @@ function getTheMaths() {
 
 
 function clearAll() {
-    if (operator === '+' || operator === '-' || operator === 'x' || operator === '÷') {
+    if (operator === '+' || operator === '-' || operator === 'x' || operator === '/') {
         console.log($(this));
         console.log(`Operator was: ${operator}`);
         operator = operator[-1];
@@ -69,6 +69,7 @@ function submitMath() { //post function to utilize inputs and button
     //conditional for not enough info alerts...
     if (mathToSend.firstNumber == '' && mathToSend.secondNumber == '') {
         alert(`I'm gonna need a LOT more info than that...`)
+        return;
     }
     else if (mathToSend.firstNumber == '' || mathToSend.secondNumber == '') {
         alert(`What am I supposed to do with only one number?`);
@@ -134,7 +135,7 @@ function timesButton() {
 function dividedByButton() {
     console.log($(this));
     // console.log(`Operator was: ${operator}`)
-    operator = '÷';
+    operator = '/';
     console.log('operator is now:', operator);
     $('#plusButton').css('background-color', '#FCFCFC');
     $('#minusButton').css('background-color', '#FCFCFC');

@@ -29,7 +29,7 @@ function crunchNumbers(equation){ //doing math...
     else if(equation.operator === 'x'){
         equation.product = parseInt(equation.firstNumber) * parseInt(equation.secondNumber);
     }
-    else if(equation.operator === '÷'){
+    else if(equation.operator === '/'){
         equation.product = parseInt(equation.firstNumber) / parseInt(equation.secondNumber);
     };
 };

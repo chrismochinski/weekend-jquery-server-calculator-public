@@ -28,7 +28,7 @@ Keep a historical record of all math operations and solutions on the server. Dis
 
 - Convert the interface to look and behave like a calculator as shown below.
 
-  *Interfaces that mirror real world objects are often more intuitive and self-explanatory for users.*
+  *Interfaces that mirror real world objects are often more intuitive and self-explanatory for users.NP
 
 ---
 ![calculator interface](images/stretchGoal_interface.gif)
