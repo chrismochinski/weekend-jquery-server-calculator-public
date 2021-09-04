@@ -25,9 +25,6 @@ function getTheMaths() {
         url: '/calculate'
     }).then(function (response) { // "let me know when you're back, then I want you to do this with the list of equations"
         // response = the listOfMaths from server
-
-        // $('input').empty(); // fresh start empty! (so it doesn't post everything again)
-        let thisEquation;
         console.log('great success! Here are the equations:', response)
         const listOfMaths = response;
         $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
@@ -41,18 +38,25 @@ function getTheMaths() {
     console.log('After AJAX.');
 }
 
-
+let equationsArray = [];
 
 function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
     console.log('in function to build the little list');
-    let equationsArray = [];
-    $('#previousHeadline').text(`Recent Results:`);
-    equationsArray.push(incomingEquation);
+    if(equationsArray.length = 1){
+        $('#previousHeadline').text(`Let's Keep It Going!`);
+    }
+    else if(equationsArray.length = 2){
+        $('#previousHeadline').text(`Let's Keep It Going!`);
+    }
+    else if(equationsArray.length > 2){
+        $('#previousHeadline').text(`Recent Results:`);
+    }
+    equationsArray.unshift(incomingEquation);
     console.log(equationsArray);
-    $('#listOfMathOutput').prepend(`<li>${incomingEquation}</li>`);
-
+    if(equationsArray.length > 1 && equationsArray[1] !== undefined) {
+    $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
+    }
 };
-
 
 function clearAll() {
     if (operator === '+' || operator === '-' || operator === 'x' || operator === '/') {
