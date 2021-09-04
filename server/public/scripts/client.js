@@ -10,6 +10,7 @@ function readyNow() {
     $('#dividedByButton').on('click', dividedByButton);
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
+    $('#previousHeadline').text(`Let's Do Some Math!`);
     getTheMaths();
 }
 
@@ -26,19 +27,31 @@ function getTheMaths() {
         // response = the listOfMaths from server
 
         // $('input').empty(); // fresh start empty! (so it doesn't post everything again)
-
+        let thisEquation;
         console.log('great success! Here are the equations:', response)
         const listOfMaths = response;
         $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
         for (const math of listOfMaths) {
             console.log(math);
-            $('#listOfMathOutput').prepend(`
-                <li>${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}</li>
-            `)
+            $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+            let newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+            recentRoundsPrepend(newEquation);
         }
     });
     console.log('After AJAX.');
 }
+
+
+
+function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
+    console.log('in function to build the little list');
+    let equationsArray = [];
+    $('#previousHeadline').text(`Recent Results:`);
+    equationsArray.push(incomingEquation);
+    console.log(equationsArray);
+    $('#listOfMathOutput').prepend(`<li>${incomingEquation}</li>`);
+
+};
 
 
 function clearAll() {
@@ -51,11 +64,20 @@ function clearAll() {
         $('#secondNumber').val('');
         $('#firstNumberOutput').val('');
         $('#operatorOutput').val('');
-        $('.theCalculationOutput').text('');
+        // $('.theCalculationOutput').text('');
         $('button').css('background-color', '#FCFCFC')
         // $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
     }
-    else { }
+    else {
+        console.log($(this));
+        console.log(`Operator is now: ${operator}`);
+        $('#firstNumber').val('');
+        $('#secondNumber').val('');
+        $('#firstNumberOutput').val('');
+        $('#operatorOutput').val('');
+        $('.theCalculationOutput').text('');
+        $('button').css('background-color', '#FCFCFC')
+    }
 }
 
 function submitMath() { //post function to utilize inputs and button
@@ -90,7 +112,8 @@ function submitMath() { //post function to utilize inputs and button
 }
 
 function handlePostSuccess(res) {  //this is the res from the POST
-    console.log(res); // grabbing the res.send from post
+    console.log('the response is:', res); // grabbing the res.send from post
+    recentRoundsPrepend();
     clearAll(); //calling clear all function to clear operator and fields
     getTheMaths();
 }
@@ -108,6 +131,7 @@ function plusButton() {
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#FCFCFC');
     $('#dividedByButton').css('background-color', '#FCFCFC');
+    return;
 }
 
 function minusButton() {
@@ -119,6 +143,7 @@ function minusButton() {
     $('#minusButton').css('background-color', '#c5edd0'); //minus button selected
     $('#timesButton').css('background-color', '#FCFCFC');
     $('#dividedByButton').css('background-color', '#FCFCFC');
+    return;
 }
 
 function timesButton() {
@@ -130,6 +155,7 @@ function timesButton() {
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#c5edd0'); //times button selected
     $('#dividedByButton').css('background-color', '#FCFCFC');
+    return;
 }
 
 function dividedByButton() {
@@ -141,4 +167,5 @@ function dividedByButton() {
     $('#minusButton').css('background-color', '#FCFCFC');
     $('#timesButton').css('background-color', '#FCFCFC'); // divided by button selected
     $('#dividedByButton').css('background-color', '#c5edd0');
+    return;
 }

@@ -3,13 +3,12 @@ body {
     background-image: url("background-gif-1.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    
 
 }
 
 header {
     background-image: url("chalk-header-back.png");
-    background-size: 80%;
+    background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
     color: black;;
@@ -17,25 +16,53 @@ header {
     padding-top: 200px;
     padding-bottom: 0px;
     text-align: center;
-    /* font-size: 3vw; */
 }
 
 .contentBelowHeader {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
-.buttonsAndInputs {
-    text-align: center;
+button {
+    font-family: 'Josefin Sans', sans-serif;
+    transition-duration: .7s;
+    background-color: #FCFCFC;
+    font-size: 20px;
+    opacity: 50%;
 }
 
-.calculationOutput {
-    font-size: 30px;
+button:hover {
+    transition-duration: .7s;
+    /* background-color: rgb(177, 147, 221); */
+    opacity: 100%
+}
+
+
+input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: transparent;
+    color: white;
+    
+}
+
+input::placeholder {
+    color: white;
+}
+
+
+.theCalculationOutput {
+    font-size: 50px;
+    color: white;
+    font-family: 'Special Elite', cursive;
     
 }
 
 #listOfMathOutput {
-    font-size: 30px;
-    font-family: 'Architects Daughter', cursive;
+    /* margin-top: 100px; */
+    font-size: 17px;
+    font-family: 'Special Elite', cursive;
     
 }
 
@@ -49,27 +76,36 @@ header {
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     list-style-position: inside;
-    font-size: 35px;
     color: white;
+    
 }
 
 h3 {
     color: white;
 }
 
-footer {
-    margin-top: 200px;
+#previousHeadline {
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    color: rgba(177, 147, 221, 0.842);
+    margin-bottom: 7px;
+}
+
+footer {
+    min-height: 100%;
+    min-height: -webkit-calc(100% - 186px);
+    min-height: -moz-calc(100% - 186px);
+    min-height: calc(100% - 186px);
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 90%;
     color: white;
-    padding-top: 1px;
-    padding-bottom: 1px;
 }
 
-button.hover{
-
-}
 
 a {
-    color: rgba(177, 147, 221, 0.842);
+    color: rgba(177, 147, 221);
 }
