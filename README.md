@@ -1,59 +1,80 @@
-# Project Name
+ # <p align="left"> <b>jQuery Server Calculator</b> <img src="./readme-visuals/calculator-icon.png" alt="calc" style="width:40px;"><p>
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
-
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
-
-## CHECKLIST
-
-
-0- [X] Server complete with static files
-1 - [x] HTML form to add items - inputs and buttons - SUPER basic CSS
-2 - [ ] GET client-side on load, get anything that exists (nothing at first) 
-3 - [ ] POST route, client-side, AJAX to send input info to server (on click)
-4 - [ ] POST route, server-side, accept (req, res) the POST (req.body)
-5 - [ ] GET route, server-side, short, to wrap stuff up and send the requested info (array of equations)
-6 - [ ] GET route, client-side, to call for the equation (and array) to eventually display
-7 - [ ] Postman tests (get and post)
-8 - [ ] Button up equation logic
-9 - [ ] Display items on DOM (routed from get items function)
-10 - [ ] Put equation array into module/node and adjust paths.
-11 - [ ] Sexy CSS
+## This application acts as a simple calculator that does correct calculations efficiently and stores previous equations for the user's reference.
+<br />
 
 ---
 
+#### <span style="color: blue">_Duration: Two-Day Sprint_</span>
 
-_AJAX REVIEW CHECKLIST_
-1 - [x] Server complete with static files
-2 - [ ] HTML form to add items
-3 - [ ] jQuery AJAX to send data to the server ("the POST route")
-4 - [ ] Server route to accept the POST ("the GET route")
-5 - [ ]TEST WITH POSTMAN (get/post)
-6 - [] Server route to GET the items
-7 - [ ] jQuery AJAX to get the data from the server
-8 - [ ] Append that info to the DOM
-9 - [ ] Display the items on page load
-10 - [ ] CSS styling
+In this app, a user inputs a number in each of two appropriate fields and selects an operator - addition, subtraction, multiplication or division. Once the "=" button is pressed, the calculation completes itself and is displayed below. 
 
-_Pick a number checklist_
-- [x] Add inputs for each player - Name and guess inputs
-- [x] Add one submit button for all
-- [x] create an array to hold player guesses
-- [x] Random number generator function within server
-- [x] Click event on client for submit button
-- [x] AJAX post on client.js with info from inputs
-- [x] app.post on server.js looking for POST partner
-- [x] app.get on server.js side sends information to client.js
-- [x] AJAX GET on client side to append info to the DOM
-- [x] Post in server for the random number 
-- [x] Get on the client side to get the random number 
-- [x] Post on the client side for winner/higher/lower historical data
-- [x] Get on server side for historical data 
-- [x] Display number of guesses for each player to the DOM
-- [x] If nobody wins, tell each player if their number was too high or low
-- [x] If player wins, cool and special alert!(or something better!)
-- [x] If there is a winner, display a Restart button that Posts a new random number to the server
+The user can also press the "C" button to clear both fields and any operator selection. Pressing it a second time will clear the previous (large) equation. Please note that both form fields must be filled in with a number, and an operator must be selected in order to utilize this application. 
+
+As the user adds more equations, they are stored below for reference. <br />
+
+---
+
+![gif from launch](./readme-visuals/serverCalculator1.gif)
+
+---
+
+![gif after use](./readme-visuals/serverCalculator2.gif)
+
+<br />
+
+### Prerequisites
+---
+- Internet browser application (e.g. Chrome, Safari)
+<br /> <br />
+
+## Installation
+---
+No particular installation steps are required.
+<br />
+<br />
+## Usage
+---
+##### _please note that steps 1 - 3 do not have to happen in any particular order_
+
+1. Enter first number (_required_)
+2. Select operator: <b>+, -, x,</b> or <b>÷</b> (_required_)
+3. Enter second number (_required_)
+4. Press the "equals" button ( <b>=</b> )
+5. Alternatively, at any point, user can press the "<b>clear</b>" button ( <b>c</b> ) to clear anything that has been entered/selected 
+6. A second press of "<b>clear</b>" ( <b>c</b> ) will remove the most recent equation (though it will still be stored in the list of previous equations)
+<br /><br />
+
+## Built with
+---
+### [Visual Studio Code](https://code.visualstudio.com/), [Pixelmator Pro](https://www.pixelmator.com/pro/)
+<br />
+
+## License
+---
+N/A
+
+<br/>
+
+## Acknowledgement
+---
+Thanks to my instructor Chris Black and [Prime Digital Academy](www.primeacademy.io) for giving me the tools to do some really rad stuff. 
+
+[Santiago Orozco](https://fonts.google.com/?query=Santiago+Orozco) for use of typeface [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans) as well as [Kimberly Geswein](https://fonts.google.com/?query=Kimberly+Geswein) for use of typeface [Architects Daughter](https://fonts.google.com/specimen/Architects+Daughter) (both via [Google Fonts](fonts.google.com)).
+<br /><br />
+
+#### _Honorable mention - my good friend (and guitarist) [Jeff Rutland](https://github.com/jeffrutland) for lending a second set of eyes and providing some helpful suggestions._<br /><br />
+
+## Support
+---
+If you have questions or issues, please do not hesitate to email me at: [cmochinski@gmail.com](mailto:cmochinski@gmail.com). I'd love to hear from you!
+
+---
+<br />
+<img align="left" src="./readme-visuals/readme-signature-pic.png" alt="mo" style="width:115px;">
+<br/ >
+
+
+##### _[My Twitter (@HolyMosesMusic)](https://twitter.com/holymosesmusic)_ <br />
+##### _[My GitHub](https://github.com/chrismochinski)_ <br />
+##### _[My LinkedIn](https://www.linkedin.com/in/chrismochinski/)_ <br />

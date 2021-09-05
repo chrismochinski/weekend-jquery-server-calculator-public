@@ -111,3 +111,13 @@ footer {
 a {
     color: rgba(177, 147, 221);
 }
+
+li:hover {
+    transition-duration: .7s;
+    font-size: 22px;
+}
+
+li {
+    transition-duration: 1s;
+    font-size: 17px;
+}
