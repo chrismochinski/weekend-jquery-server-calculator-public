@@ -48,6 +48,10 @@ input {
     
 }
 
+input:focus {
+    outline-color:rgba(177, 147, 221);
+}
+
 input::placeholder {
     color: white;
 }
