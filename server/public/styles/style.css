@@ -2,6 +2,7 @@ body {
     text-align: center;
     background-image: url("background-gif-1.gif");
     background-repeat: no-repeat;
+    background-color: black;
     background-size: cover;
 
 }

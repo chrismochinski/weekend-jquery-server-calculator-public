@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
-// app.use(bodyParser.urlencoded({extended:true})); //what is this???
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('server/public'));

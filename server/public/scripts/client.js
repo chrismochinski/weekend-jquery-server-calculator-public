@@ -36,7 +36,7 @@ function getTheMaths() {
         }
     });
     console.log('After AJAX.');
-}
+};
 
 let equationsArray = [];
 
