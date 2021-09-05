@@ -25,14 +25,14 @@ header {
 
 button {
     font-family: 'Josefin Sans', sans-serif;
-    transition-duration: .7s;
+    transition-duration: .9s;
     background-color: #FCFCFC;
     font-size: 20px;
     opacity: 50%;
 }
 
 button:hover {
-    transition-duration: .7s;
+    transition-duration: .5s;
     /* background-color: rgb(177, 147, 221); */
     opacity: 100%
 }
@@ -114,7 +114,7 @@ a {
 
 li:hover {
     transition-duration: .7s;
-    font-size: 22px;
+    font-size: 19px;
 }
 
 li {
