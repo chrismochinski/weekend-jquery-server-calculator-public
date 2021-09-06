@@ -11,7 +11,7 @@ let calculationsArray = [];
 
 app.delete('/calculate', (req, res) => {
     console.log('clearHistoryButton clicked, on server side now');
-    // calculationsArray.length = 0;
+    calculationsArray.length = 0;
     res.send('okay')
 });
 

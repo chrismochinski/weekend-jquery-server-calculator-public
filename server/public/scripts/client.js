@@ -30,6 +30,7 @@ function removeFromDom() {
     equationsArray = [];
     updateGreeting();
     recentRoundsPrepend();
+    $('#clearHistoryButton').remove();
 }
 
 
