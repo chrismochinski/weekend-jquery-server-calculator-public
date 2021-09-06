@@ -17,8 +17,6 @@ function readyNow() {
 
 let operator; //assign operator variable to empty string...for now!
 
-//////////
-// stretch time - going to try to figure this out in one hour
 function deleteTheMaths() {
     console.log('here is my attempt at a delete function...');
     $.ajax({
@@ -44,18 +42,9 @@ function getTheMaths() {
         url: '/calculate'
     }).then(function (response) { // "let me know when you're back, then I want you to do this with the list of equations"
         // response = the listOfMaths from server
-        equationsArray = response;
+        equationsArray = response; //this is making the whole array whatever the response is - in this case, the equations array from the server
         updateGreeting();
         recentRoundsPrepend();
-        // console.log('great success! Here are the equations:', response)
-        // const listOfMaths = response;
-        // $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
-        // for (const math of listOfMaths) {
-        //     console.log(math);
-        //     newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
-        //     // newEquationsArray.push(newEquation);
-        //     recentRoundsPrepend(newEquation);
-        // }
     });
 };
 
