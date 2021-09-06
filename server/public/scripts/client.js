@@ -43,6 +43,7 @@ function getTheMaths() {
         // response = the listOfMaths from server
         equationsArray = response;
         updateGreeting();
+        recentRoundsPrepend();
         // console.log('great success! Here are the equations:', response)
         // const listOfMaths = response;
         // $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
@@ -66,18 +67,27 @@ function updateGreeting() {
     }
 }
 
-function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
+function recentRoundsPrepend() { //this function builds the 'recent equations' list...
+    $('#listOfMathOutput').empty(); 
     console.log('in function to build the little list');
-    // $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
-
-    console.log(equationsArray);
-    if (equationsArray.length > 1 && equationsArray[1] !== undefined) {
-        $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
-        if ($('#clearHistoryButton').length == 0) {
-
-            $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+    if (0 < equationsArray.length) { // handling large equation/recent equation
+        $('.theCalculationOutput').text(`${equationsArray[equationsArray.length - 1].firstNumber}  ${equationsArray[equationsArray.length - 1].operator}  ${equationsArray[equationsArray.length - 1].secondNumber}  =  ${equationsArray[equationsArray.length - 1].product}`);
+    }
+    if (1 < equationsArray.length) { // handling the recent results list
+        for (i = 0; i < equationsArray.length - 1; i++) {
+            $('#listOfMathOutput').prepend(`<li>${equationsArray[i].firstNumber}  ${equationsArray[i].operator}  ${equationsArray[i].secondNumber}  =  ${equationsArray[i].product}</li>`)
         }
     }
+
+
+    // console.log(equationsArray);
+    // if (equationsArray.length > 1 && equationsArray[1] !== undefined) {
+        // $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
+    //     if ($('#clearHistoryButton').length == 0) {
+
+    //         $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+    //     }
+    // }
 };
 
 function clearAll() {
