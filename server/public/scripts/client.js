@@ -36,43 +36,40 @@ function removeFromDom() {
 
 function getTheMaths() {
     // make a request to the server for the equations array
-    console.log('before ajax');
-
     $.ajax({ //asynchronous sequence of events = steps, one at a time, waiting to complete
         method: 'GET',    // requesting w/ server ...calling the server, ends up in the get method
         url: '/calculate'
     }).then(function (response) { // "let me know when you're back, then I want you to do this with the list of equations"
         // response = the listOfMaths from server
-        let newEquation;
-        console.log('great success! Here are the equations:', response)
-        const listOfMaths = response;
-        $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
-        for (const math of listOfMaths) {
-            console.log(math);
-            $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
-            newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
-            // newEquationsArray.push(newEquation);
-        }
-        recentRoundsPrepend(newEquation);
-
+        equationsArray = response;
+        updateGreeting();
+        // console.log('great success! Here are the equations:', response)
+        // const listOfMaths = response;
+        // $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
+        // for (const math of listOfMaths) {
+        //     console.log(math);
+        //     newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+        //     // newEquationsArray.push(newEquation);
+        //     recentRoundsPrepend(newEquation);
+        // }
     });
-    console.log('After AJAX.');
 };
 
 let equationsArray = [];
 
-function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
-    console.log('in function to build the little list');
-    if (equationsArray.length = 1) {
+function updateGreeting() {
+    if (1 == equationsArray.length) {
         $('#previousHeadline').text(`Let's Keep It Going!`);
     }
-    else if (equationsArray.length = 2) {
-        $('#previousHeadline').text(`Let's Keep It Going!`);
-    }
-    else if (equationsArray.length > 2) {
+    else if (equationsArray.length >= 2) {
         $('#previousHeadline').text(`Recent Results:`);
     }
-    equationsArray.unshift(incomingEquation);
+}
+
+function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
+    console.log('in function to build the little list');
+    // $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+
     console.log(equationsArray);
     if (equationsArray.length > 1 && equationsArray[1] !== undefined) {
         $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
