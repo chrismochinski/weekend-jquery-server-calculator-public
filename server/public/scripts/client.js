@@ -11,7 +11,7 @@ function readyNow() {
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
     $('#previousHeadline').text(`Let's Do Some Math!`);
-    $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
+    $('.buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
     getTheMaths();
 }
 
@@ -29,9 +29,12 @@ function deleteTheMaths() {
 
 function removeFromDom() {
     console.log('in Remove From Dom function!')
+    equationsArray = [];
+    updateGreeting();
+    recentRoundsPrepend();
 }
 
-// let newEquationsArray = [];
+
 
 
 function getTheMaths() {
@@ -65,6 +68,9 @@ function updateGreeting() {
     else if (equationsArray.length >= 2) {
         $('#previousHeadline').text(`Recent Results:`);
     }
+    else if(0 == equationsArray.length) {
+        $('#previousHeadline').text(`Let's Do Some Math!`);
+    }
 }
 
 function recentRoundsPrepend() { //this function builds the 'recent equations' list...
@@ -73,21 +79,21 @@ function recentRoundsPrepend() { //this function builds the 'recent equations' l
     if (0 < equationsArray.length) { // handling large equation/recent equation
         $('.theCalculationOutput').text(`${equationsArray[equationsArray.length - 1].firstNumber}  ${equationsArray[equationsArray.length - 1].operator}  ${equationsArray[equationsArray.length - 1].secondNumber}  =  ${equationsArray[equationsArray.length - 1].product}`);
     }
+    else{ 
+        $('.theCalculationOutput').empty();
+    }
     if (1 < equationsArray.length) { // handling the recent results list
         for (i = 0; i < equationsArray.length - 1; i++) {
             $('#listOfMathOutput').prepend(`<li>${equationsArray[i].firstNumber}  ${equationsArray[i].operator}  ${equationsArray[i].secondNumber}  =  ${equationsArray[i].product}</li>`)
         }
     }
 
-
-    // console.log(equationsArray);
-    // if (equationsArray.length > 1 && equationsArray[1] !== undefined) {
-        // $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
-    //     if ($('#clearHistoryButton').length == 0) {
-
-    //         $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
-    //     }
-    // }
+    if (equationsArray.length > 1) {
+        if ($('#clearHistoryButton').length == 0) {
+            $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+            // $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
+        }
+    }
 };
 
 function clearAll() {
