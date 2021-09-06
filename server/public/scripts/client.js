@@ -11,27 +11,28 @@ function readyNow() {
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
     $('#previousHeadline').text(`Let's Do Some Math!`);
-    // $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
+    $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
     getTheMaths();
 }
 
 let operator; //assign operator variable to empty string...for now!
 
-////////////
+//////////
 // stretch time - going to try to figure this out in one hour
-// function deleteTheMaths() {
-//     console.log('here is my attempt at a delete function...');
-//     $.ajax({
-//         method: 'DELETE',
-//         url: '/calculate'
-//     }).then(removeFromDom);
-// }
+function deleteTheMaths() {
+    console.log('here is my attempt at a delete function...');
+    $.ajax({
+        method: 'DELETE',
+        url: '/calculate'
+    }).then(removeFromDom);
+}
 
-function removeFromDom(){
+function removeFromDom() {
     console.log('in Remove From Dom function!')
 }
 
 // let newEquationsArray = [];
+
 
 function getTheMaths() {
     // make a request to the server for the equations array
@@ -42,16 +43,18 @@ function getTheMaths() {
         url: '/calculate'
     }).then(function (response) { // "let me know when you're back, then I want you to do this with the list of equations"
         // response = the listOfMaths from server
+        let newEquation;
         console.log('great success! Here are the equations:', response)
         const listOfMaths = response;
         $('#listOfMathOutput').empty(); //clear list so whole array doesn't re-post in for of loop
         for (const math of listOfMaths) {
             console.log(math);
             $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
-            let newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+            newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
             // newEquationsArray.push(newEquation);
-            recentRoundsPrepend(newEquation);
         }
+        recentRoundsPrepend(newEquation);
+
     });
     console.log('After AJAX.');
 };
@@ -60,20 +63,23 @@ let equationsArray = [];
 
 function recentRoundsPrepend(incomingEquation) { //this function builds the 'recent equations' list...
     console.log('in function to build the little list');
-    if(equationsArray.length = 1){
+    if (equationsArray.length = 1) {
         $('#previousHeadline').text(`Let's Keep It Going!`);
     }
-    else if(equationsArray.length = 2){
+    else if (equationsArray.length = 2) {
         $('#previousHeadline').text(`Let's Keep It Going!`);
     }
-    else if(equationsArray.length > 2){
+    else if (equationsArray.length > 2) {
         $('#previousHeadline').text(`Recent Results:`);
     }
     equationsArray.unshift(incomingEquation);
     console.log(equationsArray);
-    if(equationsArray.length > 1 && equationsArray[1] !== undefined) {
-    $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
-    // $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+    if (equationsArray.length > 1 && equationsArray[1] !== undefined) {
+        $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
+        if ($('#clearHistoryButton').length == 0) {
+
+            $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+        }
     }
 };
 
