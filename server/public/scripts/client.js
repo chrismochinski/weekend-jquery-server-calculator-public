@@ -11,17 +11,34 @@ function readyNow() {
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
     $('#previousHeadline').text(`Let's Do Some Math!`);
+    // $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
     getTheMaths();
 }
 
 let operator; //assign operator variable to empty string...for now!
+
+////////////
+// stretch time - going to try to figure this out in one hour
+// function deleteTheMaths() {
+//     console.log('here is my attempt at a delete function...');
+//     $.ajax({
+//         method: 'DELETE',
+//         url: '/calculate'
+//     }).then(removeFromDom);
+// }
+
+function removeFromDom(){
+    console.log('in Remove From Dom function!')
+}
+
+// let newEquationsArray = [];
 
 function getTheMaths() {
     // make a request to the server for the equations array
     console.log('before ajax');
 
     $.ajax({ //asynchronous sequence of events = steps, one at a time, waiting to complete
-        method: 'GET',    // requesting w/ server ...calling the server, ends up in the get method /trains
+        method: 'GET',    // requesting w/ server ...calling the server, ends up in the get method
         url: '/calculate'
     }).then(function (response) { // "let me know when you're back, then I want you to do this with the list of equations"
         // response = the listOfMaths from server
@@ -32,6 +49,7 @@ function getTheMaths() {
             console.log(math);
             $('.theCalculationOutput').text(`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
             let newEquation = (`${math.firstNumber}  ${math.operator}  ${math.secondNumber}  =  ${math.product}`);
+            // newEquationsArray.push(newEquation);
             recentRoundsPrepend(newEquation);
         }
     });
@@ -55,6 +73,7 @@ function recentRoundsPrepend(incomingEquation) { //this function builds the 'rec
     console.log(equationsArray);
     if(equationsArray.length > 1 && equationsArray[1] !== undefined) {
     $('#listOfMathOutput').prepend(`<li>${equationsArray[1]}</li>`);
+    // $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
     }
 };
 
