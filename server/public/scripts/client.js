@@ -11,7 +11,8 @@ function readyNow() {
     $('#equalsButton').on('click', submitMath);
     $('#clearButton').on('click', clearAll);
     $('#previousHeadline').text(`Let's Do Some Math!`);
-    $('.buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
+    $('.buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths); 
+    // $('#clearHistoryButton').on('click', deleteTheMaths); 
     getTheMaths();
 }
 
@@ -27,13 +28,11 @@ function deleteTheMaths() {
 
 function removeFromDom() {
     console.log('in Remove From Dom function!')
+    $('#clearHistoryButton').remove()
     equationsArray = [];
     updateGreeting();
     recentRoundsPrepend();
-    $('#clearHistoryButton').remove();
 }
-
-
 
 
 function getTheMaths() {
@@ -80,7 +79,7 @@ function recentRoundsPrepend() { //this function builds the 'recent equations' l
 
     if (equationsArray.length > 1) {
         if ($('#clearHistoryButton').length == 0) {
-            $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`);
+            $('.buttonsAndInputs').append(`<button id="clearHistoryButton">Clear All</button>`); 
             // $('#buttonsAndInputs').on('click', '#clearHistoryButton', deleteTheMaths);
         }
     }

@@ -65,6 +65,7 @@ input::placeholder {
     
 }
 
+
 #listOfMathOutput {
     /* margin-top: 100px; */
     font-size: 17px;
@@ -120,6 +121,8 @@ li:hover {
     transition-duration: .7s;
     font-size: 19px;
 }
+
+
 
 li {
     transition-duration: 1s;
