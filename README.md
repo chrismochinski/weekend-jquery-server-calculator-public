@@ -1,4 +1,4 @@
- # <p align="left"> <b>jQuery Server Calculator</b> <img src="./readme-visuals/calculator-icon.png" alt="calc" style="width:40px;"><p>
+ # <p align="left"> <b>jQuery Server Calculator</b> <img src="./README-visuals/calculator-icon.png" alt="calc" style="width:40px;"><p>
 
 ## This application acts as a simple calculator that does correct calculations efficiently and stores previous equations for the user's reference.
 <br />
@@ -15,11 +15,11 @@ As the user adds more equations, they are stored below for reference. <br />
 
 ---
 
-![gif from launch](./readme-visuals/serverCalculator1.gif)
+![gif from launch](./README-visuals/serverCalculator1.gif)
 
 ---
 
-![gif after use](./readme-visuals/serverCalculator2.gif)
+![gif after use](./README-visuals/serverCalculator2.gif)
 
 <br />
 
@@ -71,7 +71,7 @@ If you have questions or issues, please do not hesitate to email me at: [cmochin
 
 ---
 <br />
-<img align="left" src="./readme-visuals/readme-signature-pic.png" alt="mo" style="width:115px;">
+<img align="left" src="./README-visuals/readme-signature-pic.png" alt="mo" style="width:115px;">
 <br/ >
 
 
