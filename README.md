@@ -75,6 +75,6 @@ If you have questions or issues, please do not hesitate to email me at: [cmochin
 <br/ >
 
 
-##### _[My Twitter (@HolyMosesMusic)](https://twitter.com/holymosesmusic)_ <br />
-##### _[My GitHub](https://github.com/chrismochinski)_ <br />
-##### _[My LinkedIn](https://www.linkedin.com/in/chrismochinski/)_ <br />
+##### _[My Twitter (@HolyMosesMusic)](https://twitter.com/holymosesmusic)_ 
+##### _[My GitHub](https://github.com/chrismochinski)_ 
+##### _[My LinkedIn](https://www.linkedin.com/in/chrismochinski/)_ 
